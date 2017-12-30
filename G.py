@@ -2404,7 +2404,7 @@ def bot(op):
             elif msg.text in ["Qr:off","Qr off"]:
                 if wait["qr"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Already off\n\n"+ datetime.today().strftime('%H:%M:%S'))
+                        cl.sendText(msg.to,"ปิดการตั่งค่านี้อยู่แล้ว\n\n"+ datetime.today().strftime('%H:%M:%S'))
                     else:
                         cl.sendText(msg.to,"Protection QR PRO Off\n\n"+ datetime.today().strftime('%H:%M:%S'))
                 else:
@@ -2416,7 +2416,7 @@ def bot(op):
             elif msg.text in ["Qr:on","Qr on"]:
                 if wait["qr"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Already on\n\n"+ datetime.today().strftime('%H:%M:%S'))
+                        cl.sendText(msg.to,"เปิดการตั่งค่านี้อยู่แล้ว\n\n"+ datetime.today().strftime('%H:%M:%S'))
                     else:
                         cl.sendText(msg.to,"Protection QR PRO On\n\n"+ datetime.today().strftime('%H:%M:%S'))
                 else:
@@ -2428,7 +2428,7 @@ def bot(op):
             elif msg.text in ["Protect:off","Protect off","ปิดป้องกัน"]:
                 if wait["protectionOn"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"เปิดการตั่งค่านี้อยู่แล้ว (｀・ω・´)\n\n"+ datetime.today().strftime('%H:%M:%S'))
+                        cl.sendText(msg.to,"ปิดการตั่งค่านี้อยู่แล้ว (｀・ω・´)\n\n"+ datetime.today().strftime('%H:%M:%S'))
                     else:
                         cl.sendText(msg.to,"Protection Off\n\n"+ datetime.today().strftime('%H:%M:%S'))
                 else:
