@@ -432,7 +432,7 @@ def bot(op):
                                     ki3.updateGroup(G)
                                 except:
                                     pass
-            if op.param2 in Amid1:
+            if op.param2 in lock:
                 pass
             else:
                 try:
