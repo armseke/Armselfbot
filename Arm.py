@@ -1053,6 +1053,15 @@ def bot(op):
                         r    = s.get(url, params=params)
                         mp3  = r.url
                         cl.sendAudioWithURL(msg.to, mp3)
+
+            elif "Pict group: " in msg.text:
+                saya = msg.text.replace('Pict group: ','')
+                gid = cl.getGroupIdsJoined()
+                for i in gid:
+                    h = cl.getGroup(i).name
+                    gna = cl.getGroup(i)
+                    if h == saya:
+                        cl.sendImageWithURL(msg.to,"http://dl.profile.line.naver.jp/"+ gna.pictureStatus)		
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
