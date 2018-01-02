@@ -693,7 +693,7 @@ def bot(op):
                                     'MSGTPL': '2'}
                 msg.text = None
                 ki.sendMessage(msg)
-            elif msg.text in ["Gift","gift"]:
+            elif msg.text in ["Gift","แจก"]:
                 msg.contentType = 9
                 msg.contentMetadata={'PRDID': '3b92ccf5-54d3-4765-848f-c9ffdc1da020',
                                     'PRDTYPE': 'THEME',
@@ -862,7 +862,32 @@ def bot(op):
                     profile = k5.getProfile()
                     profile.statusMessage = string
                     k5.updateProfile(profile)
-
+#--------------------------------
+            elif 'ยูทูป ' in msg.text:
+                try:
+                    textToSearch = (msg.text).replace('ยูทูป ', "").strip()
+                    query = urllib.quote(textToSearch)
+                    url = "https://www.youtube.com/results?search_query=" + query
+                    response = urllib2.urlopen(url)
+                    html = response.read()
+                    soup = BeautifulSoup(html, "html.parser")
+                    results = soup.find(attrs={'class':'yt-uix-tile-link'})
+                    cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
+                except:
+                    cl.sendText(msg.to,"Could not find it")
+                    
+            elif 'Youtube > ' in msg.text:
+                try:
+                    textToSearch = (msg.text).replace('Youtube > ', "").strip()
+                    query = urllib.quote(textToSearch)
+                    url = "https://www.youtube.com/results?search_query=" + query
+                    response = urllib2.urlopen(url)
+                    html = response.read()
+                    soup = BeautifulSoup(html, "html.parser")
+                    results = soup.find(attrs={'class':'yt-uix-tile-link'})
+                    cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
+                except:
+                    cl.sendText(msg.to,"Could not find it")
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
