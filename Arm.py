@@ -61,7 +61,7 @@ cl.loginResult()
 #k5.login(qr=True)
 #k5.login(token="")
 #k5.loginResult()
-
+ki=ki2=ki3=ki4=ki5=k1=k2=k3=k4=k5=cl
 ki6 = LINETCR.LINE()
 
 AsulLogged = False
