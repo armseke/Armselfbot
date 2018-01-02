@@ -918,7 +918,81 @@ def bot(op):
                 txt = msg.text.replace("Tx: ", "")
                 cl.kedapkedip(msg.to,txt)
                 print "[ @ ]	Kedapkedip"
+        
+	
+            elif "Tr-id " in msg.text:
+                isi = msg.text.replace("Tr-id ","")
+                translator = Translator()
+                hasil = translator.translate(isi, dest='id')
+                A = hasil.text
+                A = A.encode('utf-8')
+                cl.sendText(msg.to, A)
+            elif "Tr-en " in msg.text:
+                isi = msg.text.replace("Tr-en ","")
+                translator = Translator()
+                hasil = translator.translate(isi, dest='en')
+                A = hasil.text
+                A = A.encode('utf-8')
+                cl.sendText(msg.to, A)
+            elif "Tr-ar" in msg.text:
+                isi = msg.text.replace("Tr-ar ","")
+                translator = Translator()
+                hasil = translator.translate(isi, dest='ar')
+                A = hasil.text
+                A = A.encode('utf-8')
+                cl.sendText(msg.to, A)
+            elif "Tr-jp" in msg.text:
+                isi = msg.text.replace("Tr-jp ","")
+                translator = Translator()
+                hasil = translator.translate(isi, dest='ja')
+                A = hasil.text
+                A = A.encode('utf-8')
+                cl.sendText(msg.to, A)
+            elif "Tr-ko" in msg.text:
+                isi = msg.text.replace("Tr-ko ","")
+                translator = Translator()
+                hasil = translator.translate(isi, dest='ko')
+                A = hasil.text
+                A = A.encode('utf-8')
+                cl.sendText(msg.to, A)
             
+            elif "Id-en" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'en'
+                kata = msg.text.replace("Id-en ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'CHROMEOS\t7.18.0\tChrome_OS\t1'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"╔═══════\n║    From ID    \n╚═══════\n" + "" + kata + "╔═══════\n║    To EN    \n╚═══════\n" + "" + result + "\n·÷±‡±±‡±÷··÷±‡±±‡±÷·")
+            elif "En-id" in msg.text:
+                bahasa_awal = 'en'
+                bahasa_tujuan = 'id'
+                kata = msg.text.replace("En-id ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'CHROMEOS\t7.18.0\tChrome_OS\t1'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"╔═══════\n║    From En    \n╚═══════\n" + "" + kata + "╔═══════\n║    To ID    \n╚═══════\n" + "" + result + "\n·÷±‡±±‡±÷··÷±‡±±‡±÷·")
+            elif "Id-jp" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'ja'
+                kata = msg.text.replace("Id-jp ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'CHROMEOS\t7.18.0\tChrome_OS\t1'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"╔═══════\n║    From ID    \n╚═══════\n" + "" + kata + "╔═══════\n║    To JP    \n╚═══════\n" + "" + result + "\n·÷±‡±±‡±÷··÷±‡±±‡±÷·")
+            el
 
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
