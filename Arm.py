@@ -1062,6 +1062,14 @@ def bot(op):
                     gna = cl.getGroup(i)
                     if h == saya:
                         cl.sendImageWithURL(msg.to,"http://dl.profile.line.naver.jp/"+ gna.pictureStatus)		
+           
+            elif msg.text in ["Bot restart","รีบอท"]:
+		if msg.from_ in Creator:
+		    cl.sendText(msg.to, "โปรดรอกำลังรีบอทอยู่ครับ...")
+		    restart_program()
+		    print "@Restart"
+		else:
+		    cl.sendText(msg.to, "No Access")
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
