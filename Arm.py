@@ -1026,7 +1026,33 @@ def bot(op):
                 tts = gTTS(text=say, lang=lang)
                 tts.save("hasil.mp3")
                 cl.sendAudio(msg.to,"hasil.mp3")
-
+            elif "siri:" in msg.text.lower():
+                    query = msg.text.lower().replace("siri:","")
+                    with requests.session() as s:
+                        s.headers['user-agent'] = 'CHROMEOS\t7.18.0\tChrome_OS\t1'
+                        url = 'https://google-translate-proxy.herokuapp.com/api/tts'
+                        params = {'language': 'th', 'speed': '1', 'query': query}
+                        r    = s.get(url, params=params)
+                        mp3  = r.url
+                        cl.sendAudioWithURL(msg.to, mp3)
+            elif "siri-en " in msg.text.lower():
+                    query = msg.text.lower().replace("siri-en ","")
+                    with requests.session() as s:
+                        s.headers['user-agent'] = 'CHROMEOS\t7.18.0\tChrome_OS\t1'
+                        url = 'https://google-translate-proxy.herokuapp.com/api/tts'
+                        params = {'language': 'en', 'speed': '1', 'query': query}
+                        r    = s.get(url, params=params)
+                        mp3  = r.url
+                        cl.sendAudioWithURL(msg.to, mp3)
+            elif "Talk " in msg.text.lower():
+                    query = msg.text.lower().replace("Talk ","")
+                    with requests.session() as s:
+                        s.headers['user-agent'] = 'CHROMEOS\t7.18.0\tChrome_OS\t1'
+                        url = 'https://google-translate-proxy.herokuapp.com/api/tts'
+                        params = {'language': 'th', 'speed': '1', 'query': query}
+                        r    = s.get(url, params=params)
+                        mp3  = r.url
+                        cl.sendAudioWithURL(msg.to, mp3)
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
