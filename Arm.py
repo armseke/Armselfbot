@@ -5,8 +5,11 @@ from LINETCR.lib.curve.ttypes import *
 from datetime import datetime
 import time, random, sys, ast, re, os, io, json, subprocess, threading, string, codecs, requests, ctypes, urllib, urllib2, urllib3, wikipedia, tempfile
 from bs4 import BeautifulSoup
-
-# https://kaijento.github.io/2017/05/19/web-scraping-youtube.com/
+from urllib import urlopen
+from io import StringIO
+from threading import Thread
+from gtts import gTTS
+from googletrans import Translator
 
 
 cl = LINETCR.LINE()
