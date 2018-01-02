@@ -888,6 +888,31 @@ def bot(op):
                     cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
                 except:
                     cl.sendText(msg.to,"Could not find it")
+
+            elif 'ขอเพลง ' in msg.text:
+                try:
+                    textToSearch = (msg.text).replace('ขอเพลง ', "").strip()
+                    query = urllib.quote(textToSearch)
+                    url = "https://www.youtube.com/results?search_query=" + query
+                    response = urllib2.urlopen(url)
+                    html = response.read()
+                    soup = BeautifulSoup(html, "html.parser")
+                    results = soup.find(attrs={'class':'yt-uix-tile-link'})
+                    cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
+                except:
+                    cl.sendText(msg.to,"ไม่พบสื่งที่คุณต้องการค้นหา (｀・ω・´)")
+            elif 'Song ' in msg.text:
+                try:
+                    textToSearch = (msg.text).replace('ขอเพลง ', "").strip()
+                    query = urllib.quote(textToSearch)
+                    url = "https://www.youtube.com/results?search_query=" + query
+                    response = urllib2.urlopen(url)
+                    html = response.read()
+                    soup = BeautifulSoup(html, "html.parser")
+                    results = soup.find(attrs={'class':'yt-uix-tile-link'})
+                    cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
+                except:
+                    cl.sendText(msg.to,"ไม่พบสื่งที่คุณต้องการค้นหา (｀・ω・´)")
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
