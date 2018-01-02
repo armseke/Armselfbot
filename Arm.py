@@ -3,6 +3,8 @@
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
 from datetime import datetime
+from bs4 import BeautifulSoup
+
 # https://kaijento.github.io/2017/05/19/web-scraping-youtube.com/
 import time,random,sys,json,codecs,threading,glob,requests,urllib
 
