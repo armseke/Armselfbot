@@ -380,6 +380,11 @@ def upload_tempimage(client):
 
     image = client.upload_from_path(image_path, config=config, anon=False)
     print()
+	
+def waktu(secs):
+    mins, secs = divmod(secs,60)
+    hours, mins = divmod(mins,60)
+    return '%02d ชั่วโมง %02d นาที %02d วินาที' % (hours, mins, secs)
 
 def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
     tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
