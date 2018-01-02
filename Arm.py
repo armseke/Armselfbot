@@ -1167,6 +1167,26 @@ def bot(op):
 		    print "@Restart"
 		else:
 		    cl.sendText(msg.to, "No Access")
+            elif "Steal mid" in msg.text:
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]
+                cl.sendText(msg.to,"Mc: " + key1)
+            elif "Steal contact" in msg.text:
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]                
+                mmid = cl.getContact(key1)
+                msg.contentType = 13
+                msg.contentMetadata = {"mid": key1}
+                cl.sendMessage(msg)
+            elif "Mc:" in msg.text:
+              if msg.from_ in admin:
+                mmid = msg.text.replace("Mc:","")
+                msg.contentType = 13
+                msg.contentMetadata = {"mid":mmid}
+                cl.sendMessage(msg)
+
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
