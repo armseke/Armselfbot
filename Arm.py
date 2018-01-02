@@ -1070,7 +1070,17 @@ def bot(op):
                         r    = s.get(url, params=params)
                         mp3  = r.url
                         cl.sendAudioWithURL(msg.to, mp3)
-            
+            elif "Steal bio" in msg.text:
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]
+                contact = cl.getContact(key1)
+                cu = cl.channel.getCover(key1)
+                try:
+                    cl.sendText(msg.to,contact.statusMessage)
+                except:
+                    cl.sendText(msg.to,contact.statusMessage)    
+	
             elif "Steal cover @" in msg.text:
               if msg.from_ in admin:            
                 print "[Command]dp executing"
