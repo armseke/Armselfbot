@@ -1070,7 +1070,43 @@ def bot(op):
                         r    = s.get(url, params=params)
                         mp3  = r.url
                         cl.sendAudioWithURL(msg.to, mp3)
-
+            
+            elif "Steal cover @" in msg.text:
+              if msg.from_ in admin:            
+                print "[Command]dp executing"
+                _name = msg.text.replace("Steal cover @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                    cl.sendText(msg.to,"Contact not found")
+                else:
+                    for target in targets:
+                        try:
+                            contact = cl.getContact(target)
+                            cu = cl.channel.getCover(target)
+                            path = str(cu)
+                            cl.sendImageWithURL(msg.to, path)
+                        except:
+                            pass
+                print "[Command]dp executed"
+            elif "Midpict:" in msg.text:
+              if msg.from_ in admin:
+                umid = msg.text.replace("Midpict:","")
+                contact = cl.getContact(umid)
+                try:
+                    image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                except:
+                    image = "https://www.1and1.co.uk/digitalguide/fileadmin/DigitalGuide/Teaser/not-found-t.jpg"
+                try:
+                    cl.sendImageWithURL(msg.to,image)
+                except Exception as error:
+                    cl.sendText(msg.to,(error))
+                    pass
+			
             elif "Pict group: " in msg.text:
                 saya = msg.text.replace('Pict group: ','')
                 gid = cl.getGroupIdsJoined()
