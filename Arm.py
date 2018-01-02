@@ -913,6 +913,13 @@ def bot(op):
                     cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
                 except:
                     cl.sendText(msg.to,"ไม่พบสื่งที่คุณต้องการค้นหา (｀・ω・´)")
+#---------------------------
+            elif "Tx: " in msg.text:
+                txt = msg.text.replace("Tx: ", "")
+                cl.kedapkedip(msg.to,txt)
+                print "[ @ ]	Kedapkedip"
+            
+
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
                 string = msg.text.replace("1pro: ","")
