@@ -918,8 +918,25 @@ def bot(op):
                 txt = msg.text.replace("Tx: ", "")
                 cl.kedapkedip(msg.to,txt)
                 print "[ @ ]	Kedapkedip"
-        
-	
+            
+            elif "เพลง " in msg.text:
+                try:
+                    songname = msg.text.lower().replace("Music ","")
+                    params = {'songname': songname}
+                    r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+                    data = r.text
+                    data = json.loads(data)
+                    for song in data:
+                        hasil = 'This is Your Music\n'
+                        hasil += 'Judul : ' + song[0]
+                        hasil += '\nDurasi : ' + song[1]
+                        hasil += '\nLink Download : ' + song[4]
+                        kr.sendText(msg.to, hasil)
+                        kr.sendText(msg.to, "Please Wait for audio...")
+                        kr.sendAudioWithURL(msg.to, song[4])
+                except Exception as njer:
+                        kr.sendText(msg.to, str(njer))
+
             elif "Tr-id " in msg.text:
                 isi = msg.text.replace("Tr-id ","")
                 translator = Translator()
