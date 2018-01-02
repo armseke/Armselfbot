@@ -992,7 +992,40 @@ def bot(op):
                 result = page[page.find(cari_hasil)+len(cari_hasil):]
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"╔═══════\n║    From ID    \n╚═══════\n" + "" + kata + "╔═══════\n║    To JP    \n╚═══════\n" + "" + result + "\n·÷±‡±±‡±÷··÷±‡±±‡±÷·")
-            el
+            elif "Say-id " in msg.text:
+                say = msg.text.replace("Say-id ","")
+                lang = 'id'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
+                
+            elif "Say-en " in msg.text:
+                say = msg.text.replace("Say-en ","")
+                lang = 'en'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
+                
+            elif "Say-jp " in msg.text:
+                say = msg.text.replace("Say-jp ","")
+                lang = 'ja'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
+                
+            elif "Say-ar " in msg.text:
+                say = msg.text.replace("Say-ar ","")
+                lang = 'ar'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
+                
+            elif "Say-ko " in msg.text:
+                say = msg.text.replace("Say-ko ","")
+                lang = 'ko'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
 
 #---------------------------------------------------------
             elif "1pro: " in msg.text:
