@@ -1469,30 +1469,30 @@ def bot(op):
             
             elif msg.text.lower() == 'เชคค่า':
                 md = ""
-                if wait["contact"] == True: md+="☞ อ่านคท. → ✔\n"
-                else: md+="☞ อ่านคท. → ❌\n"
-                if wait["autoJoin"] == True: md+="☞ เข้ากลุ่มออโต้ → ✔\n"
-                else: md+="☞ เข้ากลุ่มออโต้ → ❌\n"
-                if wait["autoCancel"]["on"] == True:md+="☞ ยกเชิญ: " + str(wait["autoCancel"]["members"]) + " → ✔\n"
-                else: md+="☞ ยกเชิญ → ❌\n"
-                if wait["leaveRoom"] == True: md+="☞ ออกแชต → ✔\n"
-                else: md+="☞ ออกแชต → ❌\n"
-                if wait["timeline"] == True: md+="☞ แชร์ → ✔\n"
-                else:md+="☞ แชร์ → ❌\n"
-                if wait["autoAdd"] == True: md+="☞ แอดออโต้ → ✔\n"
-                else:md+="☞ แอดออโต้ → ❌\n"
-                if wait["commentOn"] == True: md+="☞ คอมเม้น → ✔\n"
-                else:md+="☞ คอมเม้น → ❌\n"
-                if wait["protect"] == True: md+="☞ ป้องกัน → ✔\n"
-                else:md+="☞ ป้องกัน → ❌\n"
-                if wait["linkprotect"] == True: md+="☞ กันลิ้ง → ✔\n"
-                else:md+="☞ กันลิ้ง → ❌\n"
-                if wait["inviteprotect"] == True: md+="☞ ป้องกันเชิญ → ✔\n"
-                else:md+="☞ ป้องกันเชิญ → ❌\n"
-                if wait["cancelprotect"] == True: md+="☞ ป้องกันยกเชิญ → ✔\n"
-                else:md+="☞ ป้องกันยกเชิญ → ❌\n"
-                if wait["likeOn"] == True: md+="☞ ไลค์ออโต้ → ✔\n"
-                else:md+="☞ ไลค์ออโต้ → ❌\n" 
+                if wait["contact"] == True: md+="🔒 อ่านคท. → ✔\n"
+                else: md+="🔒 อ่านคท. → ❌\n"
+                if wait["autoJoin"] == True: md+="🔒 เข้ากลุ่มออโต้ → ✔\n"
+                else: md+="🔒 เข้ากลุ่มออโต้ → ❌\n"
+                if wait["autoCancel"]["on"] == True:md+="🔒 ยกเชิญ: " + str(wait["autoCancel"]["members"]) + " → ✔\n"
+                else: md+="🔒 ยกเชิญ → ❌\n"
+                if wait["leaveRoom"] == True: md+="🔒 ออกแชต → ✔\n"
+                else: md+="🔒 ออกแชต → ❌\n"
+                if wait["timeline"] == True: md+="🔒 แชร์ → ✔\n"
+                else:md+="🔒 แชร์ → ❌\n"
+                if wait["autoAdd"] == True: md+="🔒 แอดออโต้ → ✔\n"
+                else:md+="🔒 แอดออโต้ → ❌\n"
+                if wait["commentOn"] == True: md+="🔒 คอมเม้น → ✔\n"
+                else:md+="🔒 คอมเม้น → ❌\n"
+                if wait["protect"] == True: md+="🔒 ป้องกัน → ✔\n"
+                else:md+="🔒 ป้องกัน → ❌\n"
+                if wait["linkprotect"] == True: md+="🔒 กันลิ้ง → ✔\n"
+                else:md+="🔒 กันลิ้ง → ❌\n"
+                if wait["inviteprotect"] == True: md+="🔒 ป้องกันเชิญ → ✔\n"
+                else:md+="🔒 ป้องกันเชิญ → ❌\n"
+                if wait["cancelprotect"] == True: md+="🔒 ป้องกันยกเชิญ → ✔\n"
+                else:md+="🔒 ป้องกันยกเชิญ → ❌\n"
+                if wait["likeOn"] == True: md+="🔒 ไลค์ออโต้ → ✔\n"
+                else:md+="🔒 ไลค์ออโต้ → ❌\n" 
                 cl.sendText(msg.to,md)
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': admsa}
@@ -2279,14 +2279,14 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
-                cl.sendText(msg.to,"ASUL BOT BY:═ह वतेु১तेั७ழণ১ह═")
+                cl.sendText(msg.to,"SelfBOT BY:หมาอาร์ม")
 
             elif cms(msg.text,["ผู้สร้าง","Creator"]):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': admsa}
-                cl.sendText(msg.to,"􀜁􀇔􏿿 ASUL BOT BY:═ह वतेु১तेั७ழণ১ह═ 􀜁􀇔􏿿 ")
+                cl.sendText(msg.to,"😹SelfBOT BY:หมาอาร์ม")
                 cl.sendMessage(msg)
-                cl.sendText(msg.to,"􀜁􀇔􏿿 http://line.me/ti/p/~toon.38 􀜁􀇔􏿿 ")
+                cl.sendText(msg.to,"😸http://line.me/ti/p/~guarmselfbot")
             
             elif "Inviteme: " in msg.text:
               if msg.from_ in admin:
